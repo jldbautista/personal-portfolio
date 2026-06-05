@@ -1,8 +1,12 @@
-# josephbautista.vercel.app
+# My Personal Portfolio
 
 My personal portfolio site.
 
 Built with Next.js, TypeScript, and Tailwind CSS. Features a 3D cat model rendered with Three.js and a minimal monospace aesthetic.
+
+```bash
+Live Site Link: https://josephbautista.vercel.app/
+```
 
 ## Pages
 
@@ -16,7 +20,7 @@ Built with Next.js, TypeScript, and Tailwind CSS. Features a 3D cat model render
 - Tailwind CSS
 - Three.js / React Three Fiber (3D cat scene)
 
-## Running locally
+## Running Locally
 
 ```bash
 npm install
