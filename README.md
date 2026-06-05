@@ -1,6 +1,6 @@
-# josephlbautista.com
+# josephbautista.vercel.app
 
-Personal portfolio site for Joseph Lorenzo Bautista — CS student at CSU Chico.
+My personal portfolio site.
 
 Built with Next.js, TypeScript, and Tailwind CSS. Features a 3D cat model rendered with Three.js and a minimal monospace aesthetic.
 
