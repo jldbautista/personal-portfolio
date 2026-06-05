@@ -1,65 +1,112 @@
-import Image from "next/image";
+import { CatScene } from './components/CatScene'
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col gap-12">
+      <div className="flex gap-8">
+        <div className="flex flex-col gap-8 flex-1 min-w-0">
+          <section>
+            <h1 className="text-3xl font-semibold tracking-tight mb-4">Joseph Lorenzo Bautista</h1>
+            <p className="text-zinc-400 leading-relaxed">
+              Computer Science Major @{' '}
+              <a
+                href="https://www.csuchico.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#CC0000] hover:text-[#a80000] transition-colors"
+              >
+                CSU Chico
+              </a>
+            </p>
+          </section>
+
+          <section className="flex flex-col gap-3">
+            <h2 className="text-sm font-medium text-zinc-500 uppercase tracking-widest">
+              Contact
+            </h2>
+            <div className="flex flex-col gap-1 text-zinc-300 text-sm">
+              <span className="text-[#CC0000]">jdbautista1@csuchico.edu</span>
+              <a
+                href="https://github.com/jldbautista"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit text-[#2dba4e] hover:text-[#239a3e] transition-colors"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/joseph-lorenzo-bautista-113b92400"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit text-[#0A66C2] hover:text-[#004182] transition-colors"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </section>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="w-52 shrink-0 self-stretch">
+          <CatScene />
         </div>
-      </main>
+      </div>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-sm font-medium text-zinc-500 uppercase tracking-widest">
+          Projects
+        </h2>
+        <div className="flex flex-col gap-6">
+          <div>
+            <p className="text-white font-medium">HouseHub</p>
+            <p className="text-zinc-400 text-sm mt-1">HouseHub is a web-based household management platform designed to help roommates and families organize daily responsibilities through shared task tracking, scheduling, announcements, and role-based collaboration tools. The application streamlines communication and coordination within a household through a centralized, user-friendly interface.</p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              {['Django', 'Python', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'SQLite', 'Git/GitHub'].map((tool) => (
+                <span key={tool} className="px-2 py-0.5 text-xs rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="text-white font-medium">CRM Tool</p>
+            <p className="text-zinc-400 text-sm mt-1">A customer relationship management (CRM) platform designed to streamline lead tracking, customer management, support ticket handling, and business workflows through centralized dashboards and real-time data management.</p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              {['React.js', 'JavaScript', 'Firebase', 'HTML5', 'CSS3', 'Bootstrap', 'Git/GitHub'].map((tool) => (
+                <span key={tool} className="px-2 py-0.5 text-xs rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="text-white font-medium">Calorie Predictor via Machine Learning</p>
+            <p className="text-zinc-400 text-sm mt-1">A machine learning application that predicts calories burned during physical activity using biometric and workout data. The project evaluates multiple predictive models and visualizes performance to identify the most accurate solution.</p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              {['Python', 'scikit-learn', 'TensorFlow/Keras', 'Pandas', 'NumPy', 'Matplotlib'].map((tool) => (
+                <span key={tool} className="px-2 py-0.5 text-xs rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-sm font-medium text-zinc-500 uppercase tracking-widest">
+          Skills
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {['Python', 'C++', 'C', 'TypeScript', 'JavaScript', 'HTML', 'CSS',' Firebase', 'React', 'Node.js', 'MySQL', 'GitHub', 'Jupyter'].map((skill) => (
+            <span
+              key={skill}
+              className="px-3 py-1 text-sm rounded-full bg-zinc-900 text-zinc-300 border border-zinc-800"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
     </div>
-  );
+  )
 }
