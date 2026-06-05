@@ -4,8 +4,9 @@ My personal portfolio site.
 
 Built with Next.js, TypeScript, and Tailwind CSS. Features a 3D cat model rendered with Three.js and a minimal monospace aesthetic.
 
+Live Site Link: 
 ```bash
-Live Site Link: https://josephbautista.vercel.app/
+josephbautista.vercel.app
 ```
 
 ## Pages
