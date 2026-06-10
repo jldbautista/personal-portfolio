@@ -110,11 +110,6 @@ body::before {
   outline: none;
 }
 
-.contact-row:hover .linkedin-mark,
-.contact-row:focus-visible .linkedin-mark {
-  fill: #ffffff;
-}
-
 @media (max-width: 640px) {
   .contact-panel {
     width: 100%;

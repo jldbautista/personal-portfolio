@@ -70,8 +70,8 @@ function TerminalToken({
 }) {
   return (
     <span
-      className={`border border-zinc-700 text-zinc-300 transition-colors hover:border-white hover:bg-white hover:text-black ${
-        size === 'lg' ? 'px-4 py-2 text-sm sm:text-base' : 'px-2 py-1 text-xs'
+      className={`cursor-default border border-zinc-700 text-zinc-300 transition-colors hover:border-white hover:bg-white hover:text-black ${
+        size === 'lg' ? 'px-3 py-1.5 text-sm sm:text-base' : 'px-2 py-1 text-xs'
       }`}
     >
       {children}
@@ -84,16 +84,17 @@ function ProjectWindow({ project }: { project: (typeof projects)[number] }) {
     <article className="group border border-zinc-800 bg-black/45 transition-colors hover:border-zinc-300">
       <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-3 text-xs text-zinc-500 group-hover:border-zinc-500">
         <div className="flex items-center gap-2" aria-hidden="true">
-          <span className="h-2.5 w-2.5 rounded-full border border-zinc-500" />
-          <span className="h-2.5 w-2.5 rounded-full border border-zinc-600" />
-          <span className="h-2.5 w-2.5 rounded-full border border-zinc-700" />
+          <span className="h-2.5 w-2.5 rounded-full border border-red-400/70 bg-red-500" />
+          <span className="h-2.5 w-2.5 rounded-full border border-amber-300/70 bg-amber-400" />
+          <span className="h-2.5 w-2.5 rounded-full border border-emerald-400/70 bg-emerald-500" />
         </div>
         <span>{project.path}</span>
       </div>
       <div className="space-y-4 p-5">
         <h3 className="text-base font-semibold text-white">{project.name}</h3>
         <p className="text-sm leading-6 text-zinc-400">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">Tools:</span>
           {project.tools.map((tool) => (
             <TerminalToken key={tool}>{tool}</TerminalToken>
           ))}
@@ -126,12 +127,10 @@ function ContactIcon({ type }: { type: 'mail' | 'github' | 'linkedin' }) {
   }
 
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 shrink-0">
-      <rect x="3" y="3" width="18" height="18" fill="currentColor" />
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 shrink-0">
       <path
-        d="M7.1 10.1h2.55v7H7.1v-7Zm1.28-3.3c.82 0 1.48.61 1.48 1.38 0 .76-.66 1.38-1.48 1.38S6.9 8.94 6.9 8.18c0-.77.66-1.38 1.48-1.38Zm2.95 3.3h2.44v.96c.34-.55 1.18-1.13 2.43-1.13 2.6 0 3.08 1.58 3.08 3.63v3.54h-2.55v-3.14c0-.75-.01-1.71-1.13-1.71-1.13 0-1.3.81-1.3 1.65v3.19h-2.55v-7Z"
-        className="linkedin-mark"
-        fill="#030303"
+        fill="currentColor"
+        d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"
       />
     </svg>
   )
@@ -173,7 +172,7 @@ function IdBadgeCard() {
         </div>
         <div className="flex justify-between gap-4 border-t border-zinc-800 pt-3">
           <dt className="text-zinc-500">Focus</dt>
-          <dd className="text-right text-zinc-200">Web + ML</dd>
+          <dd className="text-right text-zinc-200">Full Stack Web + ML</dd>
         </div>
         <div className="flex justify-between gap-4 border-t border-zinc-800 pt-3">
           <dt className="text-zinc-500">Class</dt>
@@ -186,7 +185,7 @@ function IdBadgeCard() {
 
 export default function Home() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-4">
       <section id="home" className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div className="space-y-12">
           <div className="space-y-6">
@@ -211,8 +210,8 @@ export default function Home() {
 
           <section className="space-y-4" aria-labelledby="contact-heading">
             <Prompt command="cat contact.txt" />
-            <h2 id="contact-heading" className="sr-only">
-              Contact
+            <h2 id="contact-heading" className="text-lg font-semibold uppercase tracking-widest text-zinc-300">
+              Contacts
             </h2>
             <div className="contact-panel">
               <a
@@ -255,7 +254,7 @@ export default function Home() {
       <section className="space-y-5" aria-labelledby="projects-heading">
         <Prompt command="ls projects" />
         <div className="flex items-end justify-between gap-4">
-          <h2 id="projects-heading" className="text-sm font-semibold uppercase tracking-widest text-zinc-300">
+          <h2 id="projects-heading" className="text-lg font-semibold uppercase tracking-widest text-zinc-300">
             Projects
           </h2>
           <span className="text-xs text-zinc-600">4 directories</span>
@@ -269,10 +268,10 @@ export default function Home() {
 
       <section className="space-y-5" aria-labelledby="skills-heading">
         <Prompt command="grep -r skills resume.md" />
-        <h2 id="skills-heading" className="text-xl font-semibold uppercase tracking-widest text-zinc-300">
+        <h2 id="skills-heading" className="text-lg font-semibold uppercase tracking-widest text-zinc-300">
           Skills
         </h2>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap justify-center gap-2">
           {skills.map((skill) => (
             <TerminalToken key={skill} size="lg">
               {skill}
