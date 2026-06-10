@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${jetBrainsMono.variable} h-full scroll-smooth antialiased`}>
-      <body className="min-h-full bg-black text-white font-mono">
+      <body className="min-h-full text-white font-mono">
         <div className="crt-texture" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-6xl">
           <Nav />

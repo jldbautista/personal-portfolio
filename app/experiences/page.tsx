@@ -43,11 +43,24 @@ function ExperienceEntry({ title, org, period, bullets }: Experience) {
         <span className="text-sm text-zinc-600">{period}</span>
       </div>
       <ul className="mt-4 flex flex-col gap-2">
-        {bullets.map((b, i) => (
-          <li key={i} className="text-sm leading-6 text-zinc-400">
-            <span className="text-zinc-600">$</span> {b}
-          </li>
-        ))}
+        {bullets.map((b, i) => {
+          const courseworkLabel = 'Relevant Coursework:'
+          const isCoursework = b.startsWith(courseworkLabel)
+
+          return (
+            <li key={i} className="flex items-start gap-1 text-sm leading-6 text-zinc-400">
+              <span className="text-zinc-600">$</span>
+              {isCoursework ? (
+                <span className="flex min-w-0 items-start">
+                  <span className="shrink-0">{courseworkLabel}&nbsp;</span>
+                  <span className="min-w-0">{b.slice(courseworkLabel.length).trim()}</span>
+                </span>
+              ) : (
+                <span>{b}</span>
+              )}
+            </li>
+          )
+        })}
       </ul>
     </article>
   )

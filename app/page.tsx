@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import VerificationStatus from './components/verification-status'
 
 const projects = [
   {
@@ -139,15 +140,18 @@ function ContactIcon({ type }: { type: 'mail' | 'github' | 'linkedin' }) {
 function IdBadgeCard() {
   return (
     <div className="flex h-full flex-col justify-between gap-6">
-      <div className="flex items-center justify-between border-b border-zinc-800 pb-4 text-xs uppercase tracking-widest">
-        <span className="text-zinc-500">Developer ID</span>
-        <span className="text-emerald-300">verified</span>
+      <div className="flex items-baseline justify-between gap-4 border-b border-zinc-800 pb-4 text-xs uppercase tracking-widest">
+        <div className="flex min-w-0 shrink items-baseline gap-x-4">
+          <span className="text-zinc-500">Developer ID</span>
+          <span className="truncate text-[0.68rem] text-zinc-600">ID // JB-007 </span>
+        </div>
+        <VerificationStatus />
       </div>
 
       <div className="grid gap-6 sm:grid-cols-[8rem_1fr] lg:grid-cols-1 xl:grid-cols-[8rem_1fr]">
         <div className="relative aspect-square overflow-hidden border border-zinc-700 bg-zinc-950">
           <Image
-            src="/cat_profile.jpeg"
+            src="/cat-prof.png"
             alt="Joseph Lorenzo Bautista"
             fill
             sizes="8rem"
@@ -266,7 +270,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="space-y-5" aria-labelledby="skills-heading">
+      <section className="space-y-5 pt-8" aria-labelledby="skills-heading">
         <Prompt command="grep -r skills resume.md" />
         <h2 id="skills-heading" className="text-lg font-semibold uppercase tracking-widest text-zinc-300">
           Skills
