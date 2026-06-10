@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Nav } from "./components/nav";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
@@ -19,11 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${jetBrainsMono.variable} h-full scroll-smooth antialiased`}>
       <body className="min-h-full bg-black text-white font-mono">
-        <div className="mx-auto max-w-2xl">
+        <div className="crt-texture" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-6xl">
           <Nav />
-          <main className="px-8 py-12">{children}</main>
+          <main className="px-6 pb-10 pt-2 sm:px-8 lg:pb-14 lg:pt-3">{children}</main>
         </div>
       </body>
     </html>

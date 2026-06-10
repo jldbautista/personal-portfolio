@@ -1,26 +1,139 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030303;
+  --foreground: #f7f7f7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-jetbrains-mono);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+::selection {
+  background: #f7f7f7;
+  color: #030303;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 50%, transparent 50%),
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.035), transparent 28rem);
+  background-size: 100% 4px, 100% 100%;
+}
+
+.crt-texture {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image:
+    repeating-radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 5px);
+  mix-blend-mode: screen;
+}
+
+.terminal-cursor {
+  animation: cursor-blink 1.05s steps(1, end) infinite;
+}
+
+.terminal-link {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid #3f3f46;
+  padding: 0.75rem 0.9rem;
+  color: #d4d4d8;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.terminal-link:hover,
+.terminal-link:focus-visible {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #000000;
+  outline: none;
+}
+
+.contact-panel {
+  display: grid;
+  width: max-content;
+  max-width: 100%;
+  gap: 0.95rem;
+  border: 1px solid #27272a;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1.15rem 1.35rem;
+  color: #a1a1aa;
+  transition: border-color 160ms ease;
+}
+
+.contact-panel:hover {
+  border-color: #a1a1aa;
+}
+
+.contact-row {
+  display: flex;
+  box-sizing: border-box;
+  width: calc(100% + 1.5rem);
+  align-items: center;
+  gap: 0.75rem;
+  margin: -0.2rem -1rem;
+  padding: 0.2rem 1rem;
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.contact-row:hover,
+.contact-row:focus-visible {
+  background: #ffffff;
+  color: #000000;
+  outline: none;
+}
+
+.contact-row:hover .linkedin-mark,
+.contact-row:focus-visible .linkedin-mark {
+  fill: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .contact-panel {
+    width: 100%;
+  }
+
+  .contact-row {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
 }
