@@ -235,13 +235,13 @@ export default function Home() {
                 github.com/jldbautista
               </a>
               <a
-                href="https://linkedin.com/in/joseph-lorenzo-bautista-113b92400"
+                href="https://linkedin.com/in/joseph-lorenzo-bautista"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-row"
               >
                 <ContactIcon type="linkedin" />
-                linkedin.com/in/joseph-lorenzo-bautista-113b92400
+                linkedin.com/in/joseph-lorenzo-bautista
               </a>
             </div>
           </section>
